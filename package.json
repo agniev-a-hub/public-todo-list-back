@@ -1,0 +1,45 @@
+{
+  "name": "public-todo-list-back",
+  "version": "1.0.0",
+  "description": "template ts project",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baraq-Code/public-todo-list-back.git"
+  },
+  "author": "Baraq-Code",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Baraq-Code/public-todo-list-back/issues"
+  },
+  "homepage": "https://github.com/Baraq-Code/public-todo-list-back#readme",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/body-parser": "^1.19.2",
+    "@types/config": "0.0.40",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.6",
+    "@types/lodash": "^4.14.178",
+    "@types/mongoose": "^5.11.97",
+    "@types/nanoid": "^3.0.0",
+    "@types/node": "^17.0.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.1.2",
+    "nanoid": "^3.1.30",
+    "ts-node-dev": "^1.1.8"
+  }
+}
