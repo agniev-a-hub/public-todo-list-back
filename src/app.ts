@@ -1,8 +1,7 @@
 import express from 'express';
 import config from 'config';
-import { Request, Response, NextFunction } from 'express'
-import { connectToMongoDb } from './utils/connectDb';
 import router from './router';
+import { connectToMongoDb } from './utils/connectDb';
 // const
 const PORT = config.get<number>('port');
 
@@ -26,6 +25,4 @@ async function startApplication() {
 }
 
 //application launch
-startApplication()
-
-
+startApplication();
