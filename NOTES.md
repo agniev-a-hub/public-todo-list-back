@@ -4,11 +4,11 @@ npm init
 
 _______##Dependencies##_______
 
-npm install typescript express config cors express mongoose bcrypt jsonwebtoken lodash nanoid ts-node
+npm install typescript express config cors express mongoose bcrypt jsonwebtoken lodash nanoid ts-node express-validator
 
 _______##Dev dependencies##_______
 
-npm install @types/body-parser @types/config @types/cors @types/express @types/node @types/mongoose @types/bcrypt @types/jsonwebtoken @types/lodash @types/nanoid ts-node typescript -D
+npm install @types/body-parser @types/config @types/cors @types/express @types/node @types/mongoose @types/bcrypt @types/jsonwebtoken @types/lodash @types/nanoid ts-node typescript @types/express-validator -D
 
 _______##typescriptconfig.ts initialisation##_______
 
