@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
-import { RoleModel, RoleObjectType } from './../models/role.model';
+import { RoleModel } from './../models/role.model';
 import { UserModel } from "../models/user.model";
 import { validationResult } from "express-validator";
-import config from 'config';
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt';
 
@@ -13,7 +12,7 @@ const generateAccessToken = (id, roles) => {
         roles,
     }
     let secret = "fuybtdfktrcfylhcthuttdbxt,fibn,fpelfyysqrfre;tecnfkyjybxtcrjhjcrjhjcrjhjgjqlehf,jnfnmkektckbns'njgthtdtkhtcgtrnkjk";
-    let tokenExpTime = '24h';
+    let tokenExpTime = '1y';
     return jwt.sign(payload, secret, {expiresIn: tokenExpTime})
 }
 ///####################///
@@ -34,6 +33,7 @@ class AuthController {
                 return res.status(400).json({message: 'auth.controller ->>> registration function Error, such user already exists'});
             };
             const hashedPassword = bcrypt.hashSync(password, 7);
+            //to register new ADMIN user, change 'USER' to 'ADMIN'
             const userRole = await RoleModel.findOne({value: 'USER'});
             const user = new UserModel({username, password: hashedPassword, roles: [userRole.value]});
             await user.save();
@@ -69,12 +69,6 @@ class AuthController {
     }
     async users(req:Request, res:Response){
         try{
-            // This section has been user to create userRole and adminRole, in order to not create separate endpoint for it
-            // const userRole = new RoleModel()
-            // const adminRole = new RoleModel({value: 'ADMIN'})
-            // await userRole.save()
-            // await adminRole.save()
-            // res.json('userRole and adminRole created!')
             const users = await UserModel.find()
             return res.json(users)
         }

@@ -1,11 +1,16 @@
 import express from 'express';
+import cors from 'cors'
+import cookieParser from 'cookie-parser'
 import config from 'config';
 import { connectToMongoDb } from './utils/connectDb';
 import {router, routerAuth} from './router';
 
+
 const PORT = config.get<number>('port');
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
+app.use(cors())
 app.use('/api', router);
 app.use('/auth', routerAuth);
 
